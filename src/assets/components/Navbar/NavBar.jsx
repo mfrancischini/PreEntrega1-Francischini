@@ -32,7 +32,7 @@ const NavBar = () => {
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
 
-            {/* <Menu>
+             <Menu>
               <MenuButton
                 as={Button}
                 rounded={'full'}
@@ -62,7 +62,7 @@ const NavBar = () => {
                 <MenuItem>Account Settings</MenuItem>
                 <MenuItem>Logout</MenuItem>
               </MenuList>
-            </Menu> */}
+            </Menu> 
             <CardWidget />
           </Stack>
         </Flex>

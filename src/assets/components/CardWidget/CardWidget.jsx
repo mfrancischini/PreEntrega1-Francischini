@@ -2,31 +2,23 @@ import {
     Text,
     Stack,
     Avatar,
-    AvatarBadge
+    AvatarBadge,
+    Flex
 } from '@chakra-ui/react'
+import { CiShoppingCart } from "react-icons/ci";
 
 export default function CardWidget() {
-    const hayCarrito = true;
+
 
     return (
-        
-        <Stack direction='row' spacing={4}>
-            <Avatar position="relative">
-                {hayCarrito ? (
-                    <AvatarBadge
-                        boxSize='1.25em'
-                        bg='blue.500'
-                        borderColor='transparent'
-                        display='flex'
-                        alignItems='center'
-                        justifyContent='center'
-                    >
-                        <Text color='white' fontSize='sm'>5</Text>
-                    </AvatarBadge>
-                ) : null}
-            </Avatar>
-        </Stack>
-        
+
+        <Flex direction={'row'} bg='blue.500' w='60px' h='40px' borderRadius='full' justifyContent={'center'} alignItems={'center'}>
+
+            <CiShoppingCart size={30}/><Text color='white' fontSize='sm'>5</Text>
+
+        </Flex>
+
+
     );
-    
+
 }
