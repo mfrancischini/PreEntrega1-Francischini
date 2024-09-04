@@ -1,14 +1,16 @@
-import React from 'react';
-import NavBar from './assets/components/Navbar/NavBar.jsx';
-import { ChakraProvider } from '@chakra-ui/react'
-import ItemListContainer from './assets/components/ItemListContainer/ItemListContainer.jsx';
-
+import { ChakraProvider, Flex } from '@chakra-ui/react';
+import { useProducts } from './hooks';
+import { Router } from './routes';
 function App() {
+
+  const { productsData, loading } = useProducts();
+
   return (
     <ChakraProvider>
-      <NavBar />
-      <p style={{ height: '10px' }}></p>
-      <ItemListContainer label="Estas son nuestras Novedades"/>
+      <Flex direction="column" minHeight="100vh">
+     
+        <Router></Router>
+      </Flex>
     </ChakraProvider>
   );
 }
