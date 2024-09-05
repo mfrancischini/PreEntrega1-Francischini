@@ -11,7 +11,7 @@ export const useProductById = (id) => {
       getProductById(id)
         .then((res) => {
           if (res.status === 200) {
-          
+            
             setProductData(res.data);
           }
         })
@@ -20,7 +20,7 @@ export const useProductById = (id) => {
         })
         .finally(() => setLoading(false));
     }
-  }, [id]);
+  }, []);
 
   return { productData, loading };
 };

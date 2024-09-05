@@ -15,14 +15,21 @@ import {
   ListItem,
 } from '@chakra-ui/react'
 import { MdLocalShipping } from 'react-icons/md'
-
+import { Link } from 'react-router-dom'
 export const ItemDetailContainer = ({ label, products }) => {
   if (!products) {
-    return <Text>Loading...</Text>
+    return <Text>No hay Productos</Text>
   }
 
   return (
+    
     <Container maxW={'7xl'}>
+
+  <Text align={'right'}> 
+    <Link to={`/products/category/${products.category}`}>Volver</Link>
+  </Text>
+
+    
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
         spacing={{ base: 8, md: 10 }}
@@ -78,7 +85,7 @@ export const ItemDetailContainer = ({ label, products }) => {
                 fontWeight={'500'}
                 textTransform={'uppercase'}
                 mb={'4'}>
-                Product Details
+                Detalles del Producto
               </Text>
 
               <List spacing={2}>
