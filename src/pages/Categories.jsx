@@ -1,12 +1,10 @@
-
-
 import { Flex, Spinner } from '@chakra-ui/react';
+import { ItemListContainer } from '../components';
+import { useProductsByCat } from '../hooks/useProductsByCat';
 import { useParams } from 'react-router-dom';
-import { useProductById } from '../hooks/useProductById';
-import { ItemDetailContainer } from '../components/ItemDetailContainer';
-export const Products = () => {
+export const Categories = () => {
     const { id } = useParams();
-const {productData, loading} = useProductById(id);
+const {productData, loading} = useProductsByCat(id);
     return (
         <Flex direction="column" minHeight="100vh">
 
@@ -21,7 +19,7 @@ const {productData, loading} = useProductById(id);
 
             <Flex direction="column" alignItems={'center'} p={10} justify={'center'}>
             
-              <ItemDetailContainer  label="Products" products={productData}/>
+              <ItemListContainer  label="Products" products={productData}/>
               
             </Flex>
         }

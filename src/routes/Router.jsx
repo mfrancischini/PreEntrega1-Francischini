@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { NavBar } from "../components"
-import { Home, Products } from "../pages"
+import { Home, Products, Categories } from "../pages"
 
 export const Router = () => {
     return (
@@ -8,7 +8,8 @@ export const Router = () => {
            <NavBar userName="Mfrancischini" />
             <Routes>
                 <Route path="/" element={<Home></Home>}></Route>
-                <Route path="/products" element={<Products></Products>}></Route>
+                <Route path="/products/category/:id" element={<Categories></Categories>}></Route>
+                <Route path="/products/:id" element={<Products></Products>}></Route>
             </Routes>
         </BrowserRouter>
     )

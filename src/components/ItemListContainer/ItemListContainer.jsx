@@ -8,6 +8,7 @@ import {
     Heading,
     useColorModeValue
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 export const ItemListContainer = ({ label, products }) => {
     return (
@@ -83,21 +84,24 @@ export const ItemListContainer = ({ label, products }) => {
                                     </Text>
                                 </Stack>
                                 <Box align={'center'}>
-                                    <Button
-                                        mt={10}
-                                        w={'full'}
-                                        bg={'gray.200'}
-                                        color={'gray.800'}
-                                        rounded={'xl'}
-                                        boxShadow={'0 5px 20px 0px rgb(160 160 160 / 43%)'}
-                                        _hover={{
-                                            bg: 'gray.300',
-                                        }}
-                                        _focus={{
-                                            bg: 'gray.300',
-                                        }}>
-                                        Comprar
-                                    </Button>
+                                <Link to={`/products/${product.id}`}>
+                                        <Button
+                                            mt={10}
+                                            w={'full'}
+                                            bg={'gray.200'}
+                                            color={'gray.800'}
+                                            rounded={'xl'}
+                                            boxShadow={'0 5px 20px 0px rgb(160 160 160 / 43%)'}
+                                            _hover={{
+                                                bg: 'gray.300',
+                                            }}
+                                            _focus={{
+                                                bg: 'gray.300',
+                                            }}
+                                        >
+                                            Ver detalles
+                                        </Button>
+                                    </Link>
                                 </Box>
                             </Stack>
                         </Box>
