@@ -15,6 +15,8 @@ import {
   ListItem,
 } from '@chakra-ui/react'
 import { MdLocalShipping } from 'react-icons/md'
+import { IoIosArrowRoundBack } from "react-icons/io";
+
 import { Link } from 'react-router-dom'
 export const ItemDetailContainer = ({ label, products }) => {
   if (!products) {
@@ -22,14 +24,16 @@ export const ItemDetailContainer = ({ label, products }) => {
   }
 
   return (
-    
+
     <Container maxW={'7xl'}>
+      <Flex direction={'row'} justifyContent={'end'} alignItems={'center'} ml={'10px'}>
+        <IoIosArrowRoundBack size={25} color="black" />
+        <Text ml={'10px'}>
+          <Link to={`/products/category/${products.category}`}>Volver</Link>
+        </Text>
+      </Flex>
 
-  <Text align={'right'}> 
-    <Link to={`/products/category/${products.category}`}>Volver</Link>
-  </Text>
 
-    
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
         spacing={{ base: 8, md: 10 }}
@@ -103,7 +107,7 @@ export const ItemDetailContainer = ({ label, products }) => {
                 </ListItem>
                 <ListItem>
                   <Text as={'span'} fontWeight={'bold'}>
-                   Garantia:
+                    Garantia:
                   </Text>{' '}
                   {products.warrantyInformation || 'Unknown'}
                 </ListItem>
