@@ -52,7 +52,8 @@ export function NavBar() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <img src="../../src/assets/logoDecorate.png" alt="logo" />
+          
+          <Link to='/'><img src="../../src/assets/logoDecorate.png" alt="logo" /></Link>
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
           </Flex>
