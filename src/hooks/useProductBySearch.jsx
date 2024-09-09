@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { getProductById } from '../services/products';
+import { getProductBySearch } from '../services/products';
 
-export const useProductById = (id) => {
+export const useProductBySearch = (id) => {
   const [productData, setProductData] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (id) { 
       setLoading(true); 
-      getProductById(id)
+      getProductBySearch(id)
         .then((res) => {
           if (res.status === 200) {
-            
-            setProductData(res.data);
+       
+            setProductData(res.data.products);
           }
         })
         .catch((err) => {
@@ -20,7 +20,7 @@ export const useProductById = (id) => {
         })
         .finally(() => setLoading(false));
     }
-  }, []);
+  }, [id]);
 
   return { productData, loading };
 };

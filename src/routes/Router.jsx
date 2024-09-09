@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { NavBar } from "../components"
-import { Home, Products, Categories } from "../pages"
+import { Home, Products, Categories, Buscar } from "../pages"
 
 export const Router = () => {
     return (
@@ -10,6 +10,8 @@ export const Router = () => {
                 <Route path="/" element={<Home></Home>}></Route>
                 <Route path="/products/category/:id" element={<Categories></Categories>}></Route>
                 <Route path="/products/:id" element={<Products></Products>}></Route>
+                <Route path="/products/search" element={<Buscar />} />
+
             </Routes>
         </BrowserRouter>
     )
