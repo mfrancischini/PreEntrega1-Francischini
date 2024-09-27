@@ -1,6 +1,6 @@
 import { Flex, Spinner } from '@chakra-ui/react';
 import { ItemListContainer } from '../components';
-import { useProductBySearch } from '../hooks/useProductBySearch';
+import { useProductBySearch } from '../hooks';
 import { useSearchParams } from 'react-router-dom';
 
 export const Buscar = () => {

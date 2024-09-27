@@ -242,42 +242,6 @@ const NAV_ITEMS = [
         label: 'Groceries',
         href: '/products/category/groceries',
       },
-      {
-        label: 'Decoracion',
-        href: '/products/category/home-decoration',
-      },
-      {
-        label: 'Cocina',
-        href: '/products/category/kitchen-accessories',
-      },
-      {
-        label: 'Laptops',
-        href: '/products/category/laptops',
-      },
-      {
-        label: 'Men - Remeras',
-        href: '/products/category/mens-shirts',
-      },
-      {
-        label: 'Men - Pantalones',
-        href: '/products/category/mens-shoes',
-      },
-      {
-        label: 'Relojes',
-        href: '/products/category/mens-watches',
-      },
-      {
-        label: 'Accesorios',
-        href: '/products/category/mobile-accessories',
-      },
-      {
-        label: 'Motocicletas',
-        href: '/products/category/motorcycle',
-      },
-      {
-        label: 'Tablets',
-        href: '/products/category/tablets',
-      },
       
     ],
   },

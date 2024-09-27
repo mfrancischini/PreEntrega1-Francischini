@@ -1,26 +1,48 @@
 import React, { useEffect, useState } from 'react';
-import { getProductBySearch } from '../services/products';
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import { db } from '../firebase';
 
-export const useProductBySearch = (id) => {
-  const [productData, setProductData] = useState({});
+export const useProductBySearch = (searchTerm) => {
+  const [productData, setProductData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (id) { 
-      setLoading(true); 
-      getProductBySearch(id)
-        .then((res) => {
-          if (res.status === 200) {
-       
-            setProductData(res.data.products);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-        .finally(() => setLoading(false));
+    if (!searchTerm) {
+      setProductData([]);  
+      setLoading(false);  
+      return;
     }
-  }, [id]);
+
+    const fetchProducts = async () => {
+      setLoading(true);
+
+      try {
+
+        const productsRef = collection(db, 'products');
+        
+        const q = query(
+          productsRef,
+          where('title', '>=', searchTerm),
+          where('title', '<=', searchTerm + '\uf8ff') 
+        );
+
+        const querySnapshot = await getDocs(q);
+
+        const products = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        setProductData(products); 
+      } catch (err) {
+        console.log("Error fetching products:", err);
+      } finally {
+        setLoading(false); 
+      }
+    };
+
+    fetchProducts();
+  }, [searchTerm]);
 
   return { productData, loading };
 };

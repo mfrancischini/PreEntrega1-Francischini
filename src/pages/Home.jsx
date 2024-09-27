@@ -1,13 +1,13 @@
 
 
 import { Flex, Spinner } from '@chakra-ui/react';
-import { ItemListContainer } from '../components';
+import { ItemListContainer , Carousel} from '../components';
 import { useProducts } from '../hooks';
 export const Home = () => {
-const {productsData, loading} = useProducts();
+const {products, loading} = useProducts();
     return (
         <Flex direction="column" minHeight="100vh">
-
+  <Carousel />
      
         {
           loading ? (
@@ -19,7 +19,7 @@ const {productsData, loading} = useProducts();
 
             <Flex direction="column" alignItems={'center'} p={10} justify={'center'}>
             
-              <ItemListContainer  label="Products" products={productsData}/>
+              <ItemListContainer  label="Products" products={products}/>
               
             </Flex>
         }

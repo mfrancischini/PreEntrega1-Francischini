@@ -1,25 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { getProductById } from '../services/products';
-
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 export const useProductById = (id) => {
   const [productData, setProductData] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (id) { 
-      setLoading(true); 
-      getProductById(id)
-        .then((res) => {
-          if (res.status === 200) {
-            
-            setProductData(res.data);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-        .finally(() => setLoading(false));
-    }
+    const product = doc(db, "products", id);
+    getDoc(product)
+    .then((snapshot)=>{ 
+      setProductData({ id: snapshot.id ,...snapshot.data()});
+      
+    })
+    .catch(error => console.log(error))
+    .finally(() => setLoading(false));
   }, []);
 
   return { productData, loading };
