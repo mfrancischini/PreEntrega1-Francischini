@@ -32,20 +32,20 @@ export function Carousel() {
 
   const cards = [
     {
-      title: 'Cosmeticos',
+      title: 'Beauty',
       text: "Descubre la Belleza Natural que Hay en Ti, Transforma tu rutina con nuestros cosméticos de alta calidad. Ingredientes naturales.",
-  image: '../../src/assets/cosmeticos.jpg',
+  image: 'https://firebasestorage.googleapis.com/v0/b/coderhouse-60030-ed75a.appspot.com/o/cosmeticos.jpg?alt=media&token=1894838b-14ff-47fe-a661-cbfd8ae67c4f',
       },
 {
-  title: 'Fragancias',
-    text: "Explora nuestro exclusivo catálogo de fragancias y perfumes diseñados para resaltar tu personalidad. Desde aromas frescos y ligeros hasta notas intensas y sofisticadas, encuentra el perfume que mejor te define. Deja una huella imborrable con cada paso",
-      image: '../../src/assets/fragancias.jpg'
+  title: 'Fragrances',
+    text: "Explora nuestro exclusivo catálogo de fragancias y perfumes diseñados para resaltar tu personalidad.Desde aromas frescos y ligeros hasta notas intensas y sofisticadas.",
+      image: 'https://firebasestorage.googleapis.com/v0/b/coderhouse-60030-ed75a.appspot.com/o/fragancias.jpg?alt=media&token=088d02d3-5068-415a-8f00-765d22a945ab'
       },
 
     ];
 
 return (
-  <Box position={'relative'} height={'200px'} width={'full'} overflow={'hidden'}>
+  <Box position={'relative'} height={'400px'} width={'full'} overflow={'hidden'}>
     <link
       rel="stylesheet"
       type="text/css"
