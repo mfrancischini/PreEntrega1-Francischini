@@ -43,16 +43,18 @@ export function CardWidget() {
         </Link>
       </Flex>
 
-      <Link to="/checkout">
+      
   <Flex alignItems="center">
     <CiShoppingCart size={25} color="black" />
     {qtyTotalItems > 0 && (
-      <Text color="black" fontSize="sm" ml={1}>
+      <Link to="/checkout">
+      
+      <Text color="blue" fontSize="sm" ml={1}>
         {qtyTotalItems}
-      </Text>
+      </Text></Link>
     )}
   </Flex>
-</Link>
+
 
 
 
